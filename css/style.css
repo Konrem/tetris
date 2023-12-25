@@ -1,10 +1,9 @@
 @font-face {
-    font-family: "Trickster";
+    font-family: "Vintagio Classico";
     src:
-      local("Trickster"),
-      url("trickster-COLRv1.otf") format("opentype") tech(color-COLRv1),
-      url("trickster-outline.otf") format("opentype"),
-      url("trickster-outline.woff") format("woff");
+      local("Vintagio Classico"),
+      url("font/Vintagio\ Classico.otf") format("opentype"),
+      url("font/Vintagio\ Classico.ttf") format("ttf");
   }
 
 *{
@@ -21,7 +20,7 @@ body{
 }
 
 .tetris{
-    background-color: green;
+    background: linear-gradient(0deg, rgba(13,7,112,1) 0%, rgba(166,11,4,0.9725140056022409) 10%, rgba(6,16,121,1) 20%, rgba(116,2,108,1) 30%, rgba(5,129,2,1) 40%, rgba(3,97,88,1) 50%, rgba(163,4,37,1) 60%, rgba(196,194,1,1) 70%, rgba(162,31,1,1) 80%, rgba(0,193,235,1) 90%, rgba(0,9,255,1) 100%);
     padding: 0.5vh;
     border-radius: 0.5vh;
     display: grid;
@@ -33,21 +32,38 @@ body{
     height: min(4vh, 7vw);
     width: min(4vh, 7vw);
     border: 1px solid rgba(128, 128, 128, 0.75);
-    background-color: rgba(24, 31, 39, 0.85);
+    background-color: rgba(24, 31, 39, 0.8);
     border-radius: 0.3vh;
+
 }
 
 .panel{
     margin-left: 5vh;
-    font-family: robo;
+    font-family: "Vintagio Classico";
 }
 #score{
-    /* position: absolute;
-    left: 5vh;
-    top: 5vh; */
-    font-size: 10vh;
+    font-size: 6vh;
     font-weight: bold;
-    color: white;
+    color: rgba(255, 255, 255, 1);
+}
+#message{
+    margin-top: 2vh;
+    font-size: 4vh;
+    font-weight: bold;
+    font-style: italic;
+    color: rgba(0, 0, 0, 1);
+
+}
+.tetris .O,
+.tetris .L,
+.tetris .J,
+.tetris .S,
+.tetris .Z,
+.tetris .T,
+.tetris .I
+{
+    box-shadow: -3px -3px 5px 0px rgba(255, 255, 255, 0.45);
+
 }
 /* 
 
