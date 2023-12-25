@@ -54,6 +54,28 @@ body{
     color: rgba(0, 0, 0, 1);
 
 }
+.tetris .O{
+    background: rgba(246, 223, 36, 1);
+}
+.tetris .L{
+    background: rgba(246, 172, 255, 1);
+}
+.tetris .J{
+    background: rgba(94, 229, 0, 1);
+}
+.tetris .S{
+    background: rgba(229, 159, 61, 1);
+}
+.tetris .Z{
+    background: rgba(166, 134, 241, 1);
+}
+.tetris .T{
+    background: rgba(107, 72, 228, 1);
+}
+.tetris .I{
+    background: rgba(35, 37, 223, 1);
+}
+
 .tetris .O,
 .tetris .L,
 .tetris .J,

@@ -87,14 +87,14 @@ function generateTetromino() {
 	);
 	const row = -2;
 
-	const color = colorFigure[getRandom(colorFigure.length)];
+	// const color = colorFigure[getRandom(colorFigure.length)];
 
 	tetromino = {
 		name: name,
 		matrix: matrix,
 		row: row,
 		column: column,
-		color: color,
+		// color: color,
 	};
 }
 
@@ -131,7 +131,7 @@ function drawTetromino() {
 
 			if (cellIndex >= 0 && tetromino.row >= -1) {
 				cells[cellIndex].classList.add(name);
-				cells[cellIndex].style.background = tetromino.color;
+				// cells[cellIndex].style.background = tetromino.color;
 			}
 		}
 	}
@@ -151,19 +151,20 @@ document.addEventListener("keydown", onKeyDown);
 
 function onKeyDown(event) {
 	switch (event.key) {
-		case "ArrowRight":
+		case "ArrowRight" || "swiped-right":
 			moveTetrominoRight();
 			break;
 		case "ArrowDown":
 			moveTetrominoDown();
 			break;
-		case "ArrowLeft":
+		case "ArrowLeft" || "swiped-left":
 			moveTetrominoLeft();
 			break;
-		case "ArrowUp":
+		case "ArrowUp" || "swiped-up":
 			rotateTetromino();
 			break;
 	}
+
 	draw();
 }
 
