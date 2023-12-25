@@ -151,22 +151,39 @@ document.addEventListener("keydown", onKeyDown);
 
 function onKeyDown(event) {
 	switch (event.key) {
-		case "ArrowRight" || "swiped-right":
+		case "ArrowRight":
 			moveTetrominoRight();
 			break;
 		case "ArrowDown":
 			moveTetrominoDown();
 			break;
-		case "ArrowLeft" || "swiped-left":
+		case "ArrowLeft":
 			moveTetrominoLeft();
 			break;
-		case "ArrowUp" || "swiped-up":
+		case "ArrowUp":
 			rotateTetromino();
 			break;
 	}
 
 	draw();
 }
+
+function swipe() {
+	document.addEventListener("swiped-right", function (e) {
+		moveTetrominoRight();
+	});
+	document.addEventListener("swiped-down", function (e) {
+		moveTetrominoDown();
+	});
+	document.addEventListener("swiped-left", function (e) {
+		moveTetrominoLeft();
+	});
+	document.addEventListener("swiped-up", function (e) {
+		rotateTetromino();
+	});
+	draw();
+}
+swipe();
 
 function moveTetrominoDown() {
 	tetromino.row += 1;
