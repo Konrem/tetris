@@ -75,7 +75,7 @@ function generatePlayField() {
 		.fill()
 		.map(() => new Array(PLAYFIELD_COLUMNS).fill());
 
-	scoreShow();
+	scoreShow(0);
 }
 
 function generateTetromino() {
@@ -337,14 +337,20 @@ function finalScore(scoreRows, rowsDeleted) {
 function scoreShow(rows) {
 	let message = "";
 	switch (rows) {
+		case 0:
+			message = "Згадай цю класичну гру!";
+			break;
+		case 1:
+			message = "На одну лінію меншу.";
+			break;
 		case 2:
-			message = "Круто, аж цілих 2 ряда відразу!";
+			message = "Аж цілих 2 ряда відразу!";
 			break;
 		case 3:
 			message = "Ого! Аж 3 ряди підряд!";
 			break;
 		case 4:
-			message = "А це законно?! 4 ряда відразу!";
+			message = "Це законно? 4 ряда відразу!";
 			break;
 	}
 

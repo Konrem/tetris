@@ -29,8 +29,8 @@ body{
 }
 
 .tetris div{
-    height: min(4vh, 7vw);
-    width: min(4vh, 7vw);
+    height: min(3vh, 7vw);
+    width: min(3vh, 7vw);
     border: 1px solid rgba(128, 128, 128, 0.75);
     background-color: rgba(24, 31, 39, 0.8);
     border-radius: 0.3vh;
@@ -46,8 +46,8 @@ body{
     color: rgba(255, 255, 255, 1);
 }
 #message{
-    margin-top: 2vh;
-    font-size: 4vh;
+    margin: 1vh 0;
+    font-size: 3vh;
     font-weight: bold;
     font-style: italic;
     color: rgba(0, 0, 0, 1);
@@ -85,6 +85,18 @@ body{
 {
     box-shadow: -3px -3px 5px 0px rgba(255, 255, 255, 0.45);
 
+}
+
+.keys{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2vh;
+}
+.key_arrow{
+    font-size: 5vh;
+    background: grey;
+    border-radius: 10%;
+    padding: 1vh 2vh;
 }
 /* 
 
