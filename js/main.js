@@ -150,7 +150,15 @@ function draw() {
 document.addEventListener("keydown", onKeyDown);
 
 function onKeyDown(event) {
-	switch (event.key) {
+	switchBtnMove(event.key);
+}
+
+function htmlButton(event) {
+	switchBtnMove(event.dataset.key);
+}
+
+function switchBtnMove(arrow) {
+	switch (arrow) {
 		case "ArrowRight":
 			moveTetrominoRight();
 			break;
@@ -164,7 +172,6 @@ function onKeyDown(event) {
 			rotateTetromino();
 			break;
 	}
-
 	draw();
 }
 
