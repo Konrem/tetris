@@ -92,22 +92,12 @@ body{
     justify-content: space-between;
     padding-top: 2vh;
 }
-.key_arrow{
+.keys img{
     font-size: 5vh;
-    background: grey;
-    border-radius: 10%;
-    padding: 1vh 2vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 5vh;
-}
-.rotate_arrow{
-    font-size: 6vh;
+    width: 6vh;
 }
 
-
-.F{
+/* .F{
     color: rgba(246, 223, 36, 1);
     color: rgba(246, 172, 255, 1);
     color: rgba(61, 238, 241, 0.75);
@@ -121,4 +111,4 @@ body{
     COLOR: rgba(35, 37, 223, 1);
     color: #ff6a3a;
 
-}
+} */
