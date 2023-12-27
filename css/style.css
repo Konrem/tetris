@@ -102,6 +102,9 @@ body{
     justify-content: center;
     width: 5vh;
 }
+.rotate_arrow{
+    font-size: 6vh;
+}
 
 
 .F{
