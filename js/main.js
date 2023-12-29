@@ -62,7 +62,8 @@ let playfield,
 	isPaused = false,
 	isGameOver = false,
 	score = 0,
-	bestScore = 101;
+	bestScore = 101,
+	levelSpeed = 801;
 const gameOverBlock = document.querySelector(".game-over");
 const btnRestart = document.querySelector(".restart");
 const bestScoreDiv = document.querySelector(".best-score-menu");
@@ -446,13 +447,16 @@ function moveDown() {
 function autoMoveTetromino() {
 	timerId = setInterval(() => {
 		moveDown();
-	}, 800);
+	}, levelSpeed);
 }
 
 function stopMoveTetromino() {
 	timerId = clearInterval(timerId);
 }
 
+function levelSpeedMove(event) {
+	levelSpeed = event.dataset.key;
+}
 // Game Over
 
 function gameOver() {
