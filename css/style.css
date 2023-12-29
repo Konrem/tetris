@@ -137,7 +137,7 @@ img{
 }
 .result-game{
     width: auto;
-    height: 65%;
+    height: 80%;
     padding: 25px;
     background: rgba(158, 158, 158, 0.9) ;
     border-radius: 15px;
@@ -164,7 +164,7 @@ img{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 10%;
+    bottom: 8%;
 }
 
 /* .F{
