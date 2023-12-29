@@ -1,24 +1,27 @@
 @font-face {
-    font-family: "Vintagio Classico";
-    src:
-      local("Vintagio Classico"),
-      url("font/Vintagio\ Classico.otf") format("opentype"),
-      url("font/Vintagio\ Classico.ttf") format("ttf");
+    font-family: "Tetris";
+    src: url("/css/font/Tetris.ttf");
+}
+@font-face {
+    font-family: "Press_Start_2P";
+    src: url("/css/font/Press_Start_2P.ttf");
 }
 
 *{
     margin: 0;
 }
 
-body{
+.field{
     background: linear-gradient(90deg, rgba(0, 0, 255, 1), rgba(255, 0, 0, 1));
     height: 100vh;
+    width: 100vw;
     user-select: none;
+}
+.d-flex{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .tetris{
     background: linear-gradient(0deg, rgba(13,7,112,1) 0%, rgba(166,11,4,1) 10%, rgba(6,16,121,1) 20%, rgba(116,2,108,1) 30%, rgba(5,129,2,1) 40%, rgba(3,97,88,1) 50%, rgba(163,4,37,1) 60%, rgba(196,194,1,1) 70%, rgba(162,31,1,1) 80%, rgba(0,193,235,1) 90%, rgba(0,9,255,1) 100%);
     padding: 0.5vh;
@@ -36,12 +39,27 @@ body{
     border-radius: 0.3vh;
 
 }
-
-.panel{
-    font-family: "Vintagio Classico";
+.title{
+    font-family: "Tetris";
+    font-size: 5vh;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: -5px 5px 5px rgba(255,255,255,0.5);
+}
+.sub-title{
+    font-family: "Press_Start_2P";
+    font-size: 4vh;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 3vh;
+}
+.subtitle-game-over{
+    font-size: 4vh;
+    text-align: center;
 }
 #score{
-    font-size: 3vh;
+    font-family: "Press_Start_2P";
+    font-size: 2.5vh;
     font-weight: bold;
     color: rgba(255, 255, 255, 1);
 }
@@ -65,7 +83,7 @@ img{
     font-weight: bold;
     font-style: italic;
     color: rgba(0, 0, 0, 1);
-
+    text-align: center;
 }
 .tetris .O{
     background: rgba(246, 223, 36, 1);
@@ -98,7 +116,6 @@ img{
 .tetris .I
 {
     box-shadow: -3px -3px 5px 0px rgba(255, 255, 255, 0.45);
-
 }
 
 .keys{
@@ -109,27 +126,45 @@ img{
 .keys img{
     font-size: 5vh;
     width: 6vh;
-
 }
 
 .game-over{
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color: rgba(0, 0, 0, 0.75);
     width: 100%;
     height: 100%;
     display: none;;
-    justify-content: center;
-    align-items: center;
+}
+.result-game{
+    width: auto;
+    height: 65%;
+    padding: 25px;
+    background: rgba(158, 158, 158, 0.9) ;
+    border-radius: 15px;
+    font-size: 3vh;
+    text-align: center;
+    position: relative;
+}
+.result-game div{
+    margin: 25px 0;
+}
+.achievement{
+    font-style: italic;
 }
 .restart{
-    padding: 30px;
+    padding: 20px;
     border: none;
-    border-radius: 15%;
-    background-color: aqua;
-    font-size: 15px;
+    border-radius: 10px;
+    background-color: rgba(0,0,255,0.9);
+    color: rgba(255,255,0,0.9);
+    font-size: 25px;
     text-transform: uppercase;
     font-weight: bold;
     cursor: pointer;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10%;
 }
 
 /* .F{

@@ -7,6 +7,7 @@
     <title>Tetris</title>
 </head>
 <body>
+    <div class="d-flex field">
     <!-- дз1 -->
     <!-- додати інші фігури і стилізувати -->
     <!-- додати функцію рандому, яка буде видавати випадково фігуру -->
@@ -40,15 +41,15 @@
           <ul>
             <li><a href="#" class="pause-menu" data-key="p" onclick="htmlButton(this)">Зупиночку, будь ласка</a></li>
             <li><a href="#" class="new-game" onclick="init()">Клацнути руковичкою Таноса</a></li>
-            <li><div class="best-score">Best Score: 85</div></li>
+            <li><div class="best-score-menu">Best Score: 85</div></li>
             <li><a href="#">Contact Us</a></li>
           </ul>
         </div>
         <div class="menu-background"></div>
     </div>
     
-    
     <div class="panel">
+        <div class="title">TETRIS</div>
         <div id="message"></div>
         <div class="pause-score">
             <div id="score"></div>
@@ -64,10 +65,19 @@
         <img src="./img/arrow-right.svg" data-key="ArrowRight" onclick="htmlButton(this)">
     </div>
 </div>
-<div class="game-over">
-    <button class="restart">Restart</button>
+<div class="game-over d-flex">
+    <div class="result-game">
+        <div class="title">TETRIS</div>
+        <div class="subtitle-game-over">Давай по новой Миша, все</div>
+        <div class="sub-title">Game Over</div>
+        <div class="best-score-end"></div>
+        <div class="your-score-end"></div>
+        <div class="achievement"></div>
+        
+        <button class="restart">Restart</button>
+    </div>
 </div>
-
+</div>
 
     <script src="js/swiped-events.min.js"></script>
     <script src="js/main.js"></script>

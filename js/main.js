@@ -58,7 +58,7 @@ const colorFigure = [
 let playfield, tetromino;
 let score = 0,
 	bestScore = 0;
-let cells;
+let cells, achievement;
 let isPaused = false;
 let isGameOver = false;
 const gameOverBlock = document.querySelector(".game-over");
@@ -303,7 +303,6 @@ function placeTetromino() {
 	for (let row = 0; row < matrixSize; row++) {
 		for (let column = 0; column < matrixSize; column++) {
 			if (!tetromino.matrix[row][column]) continue;
-			console.log(tetromino.row + row);
 			if (tetromino.row + row < 0) {
 				isGameOver = true;
 				return;
@@ -427,15 +426,8 @@ function scoreShow(rows) {
 			break;
 	}
 
-	document.getElementById("score").innerHTML = "Score: " + score;
+	document.getElementById("score").innerHTML = "Score : " + score;
 	document.getElementById("message").innerHTML = message;
-
-	// О, ти почав уже? - 100
-	// Батя, я стараюся - 350
-	// Поки ти граєш, ще стало на 5 більше "хороших руськіх" - 1000
-	// Поки ти грав,
-	// end - Миша, все не то. Давай по новому.
-	// end < 100 - Арестович, ти?
 }
 
 // AUTOMOVE
@@ -464,6 +456,28 @@ function gameOver() {
 	gameOverBlock.style.display = "flex";
 	if (bestScore < score) {
 		bestScore = score;
-		bestScoreDiv.innerHTML = "Best Score:" + bestScore;
+		document.querySelector(".best-score-end").innerHTML =
+			"New Best Result: " + bestScore;
+	} else {
+		document.querySelector(".best-score-end").innerHTML =
+			"Best Result: " + bestScore;
 	}
+
+	document.querySelector(".your-score-end").innerHTML =
+		"Your Score: " + score;
+	switch (true) {
+		case score <= 100:
+			achievement = "Арестович, ти?";
+			break;
+		case score <= 350:
+			achievement = "Батя, я стараюся...";
+			break;
+		case score <= 1000:
+			achievement = "Подякуємо ЗСУ за мінімум 5 'хороших' руськіх!";
+			break;
+		case score > 9999:
+			achievement = "Кирило Олексійович, це ви?";
+			break;
+	}
+	document.querySelector(".achievement").innerHTML = achievement;
 }
