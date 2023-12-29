@@ -95,6 +95,9 @@ body{
 .keys img{
     font-size: 5vh;
     width: 6vh;
+    border: 5px solid black;
+    border-radius: 20%;
+    padding: 10px;
 }
 
 .game-over{
