@@ -57,13 +57,13 @@ const colorFigure = [
 
 let playfield, tetromino;
 let score = 0,
-	bestScore = 0;
+	bestScore = 101;
 let cells, achievement;
 let isPaused = false;
 let isGameOver = false;
 const gameOverBlock = document.querySelector(".game-over");
 const btnRestart = document.querySelector(".restart");
-const bestScoreDiv = document.querySelector(".best-score");
+const bestScoreDiv = document.querySelector(".best-score-menu");
 const pauseKey1 = document.querySelector(".pause-menu");
 const pauseKey2 = document.querySelector(".pause-main");
 
@@ -78,6 +78,7 @@ function init() {
 	cells = document.querySelectorAll(".tetris div");
 	draw();
 	swipe();
+	bestScoreDiv.innerHTML = "Best Score: " + bestScore;
 	score = 0;
 	scoreShow(0);
 }
@@ -89,6 +90,7 @@ btnRestart.addEventListener("click", function () {
 pauseKey2.addEventListener("click", function () {
 	togglePauseGame();
 });
+
 document.addEventListener("keydown", onKeyDown);
 
 function convertPositionToIndex(row, column) {
