@@ -56,12 +56,16 @@ const colorFigure = [
 ];
 
 let playfield, tetromino;
-let score = 0;
+let score = 0,
+	bestScore = 0;
 let cells;
 let isPaused = false;
 let isGameOver = false;
 const gameOverBlock = document.querySelector(".game-over");
 const btnRestart = document.querySelector(".restart");
+const bestScoreDiv = document.querySelector(".best-score");
+const pauseKey1 = document.querySelector(".pause-menu");
+const pauseKey2 = document.querySelector(".pause-main");
 
 init();
 
@@ -78,6 +82,13 @@ function init() {
 	scoreShow(0);
 }
 
+btnRestart.addEventListener("click", function () {
+	init();
+});
+
+pauseKey2.addEventListener("click", function () {
+	togglePauseGame();
+});
 document.addEventListener("keydown", onKeyDown);
 
 function convertPositionToIndex(row, column) {
@@ -168,8 +179,12 @@ function togglePauseGame() {
 
 	if (isPaused) {
 		stopMoveTetromino();
+		pauseKey1.innerHTML = "Поїхали далі";
+		pauseKey2.src = "./img/play.svg";
 	} else {
 		autoMoveTetromino();
+		pauseKey1.innerHTML = "Зупиночку, будь ласка";
+		pauseKey2.src = "./img/pause.svg";
 	}
 }
 
@@ -399,7 +414,7 @@ function scoreShow(rows) {
 			message = "Згадай цю класичну гру!";
 			break;
 		case 1:
-			message = "На одну лінію меншу.";
+			message = "На одну лінію менше.";
 			break;
 		case 2:
 			message = "Аж цілих 2 ряда відразу!";
@@ -442,13 +457,13 @@ function stopMoveTetromino() {
 	timerId = clearInterval(timerId);
 }
 
-// Game Overq
+// Game Over
 
 function gameOver() {
 	stopMoveTetromino();
 	gameOverBlock.style.display = "flex";
+	if (bestScore < score) {
+		bestScore = score;
+		bestScoreDiv.innerHTML = "Best Score:" + bestScore;
+	}
 }
-
-btnRestart.addEventListener("click", function () {
-	init();
-});

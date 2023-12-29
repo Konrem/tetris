@@ -41,9 +41,23 @@ body{
     font-family: "Vintagio Classico";
 }
 #score{
-    font-size: 6vh;
+    font-size: 3vh;
     font-weight: bold;
     color: rgba(255, 255, 255, 1);
+}
+.pause-score{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.pause-main{
+    font-size: 2vh;
+    width: 2.5vh;
+}
+img{
+    border: 5px solid black;
+    border-radius: 20%;
+    padding: 8px;
 }
 #message{
     margin: 1vh 0;
@@ -95,9 +109,7 @@ body{
 .keys img{
     font-size: 5vh;
     width: 6vh;
-    border: 5px solid black;
-    border-radius: 20%;
-    padding: 10px;
+
 }
 
 .game-over{
@@ -135,3 +147,132 @@ body{
     color: #ff6a3a;
 
 } */
+.navigation-block {
+    width: 200px;
+    position: fixed;
+    left: 5%;
+    top: 5%;
+  }
+  
+  .hamberger-menu {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .bar {
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    position: absolute;
+    transition: all 0.3s ease-out;
+  }
+  
+  .bar.upper-bar {
+    transform: translatey(-10px);
+  }
+  
+  .bar.lower-bar {
+    transform: translatey(10px);
+  }
+  
+  .hamberger-menu,
+  .menu-list {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .menu-list {
+    display: none;
+  }
+  ul {
+    padding: 0;
+  }
+  .menu-list > ul {
+    list-style: none;
+    margin-top: 20px;
+  }
+  
+  .menu-list > ul > li a,
+  .menu-list > ul > li div{
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    border-bottom: solid 1px rgba(0,0,0,0.2);
+    transition: 0.3s;
+  }
+  
+  .menu-list > ul > li a:hover {
+    background-color: rgba(0,0,0,0.2);
+    animation: linkAnimation 0.2s ease-out;
+  }
+  
+  .menu-background {
+    width: 650px;
+    height: 650px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    background-color: #eb4d4b;
+    transform: translate(-100%, -100%);
+    transition: all 0.3s ease-out;
+    border-radius: 100%;
+  }
+  
+  .navigation-block:hover .bar.upper-bar,
+  .navigation-block:hover .bar.lower-bar {
+    transform: translatey(0px);
+  }
+  
+  .navigation-block:hover .bar.upper-bar {
+    transform: rotate(45deg);
+  }
+  
+  .navigation-block:hover .bar.lower-bar {
+    transform: rotate(-45deg);
+  }
+  
+  .navigation-block:hover .bar.middle-bar {
+    transform: translatex(-1000px);
+  }
+  
+  .navigation-block:hover .menu-list {
+    display: block;
+  }
+  
+  .navigation-block:hover .menu-background {
+    animation: bubblePresent 0.3s ease-out;
+    transform: translate(-50%, -30%);
+  }
+  
+  @keyframes linkAnimation {
+    0% {
+      /*transform: translateX(50px);*/
+      transform: scale(1.1);
+    }
+    80% {
+      /*transform: translateX(-10px);*/
+      transform: scale(0.9);
+    }
+    100% {
+      /*transform: translateX(0px);*/
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes bubblePresent {
+    0% {
+      transform: translate(-100%, -100%);
+    }
+    80% {
+      transform: translate(-45%, -25%);
+    }
+    100% {
+      transform: translate(-50%, -30%);
+    }
+  }

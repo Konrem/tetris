@@ -29,15 +29,35 @@
     <!-- показати фігуру, що буде наступною -->
     <!-- додати рівні гри з наростаючою і ні шкидкістю -->
     <!-- зберігати і виводити найкращий результат -->
+    
+    <div class="navigation-block">
+        <div class="hamberger-menu">
+          <div class="bar upper-bar"></div>
+          <div class="bar middle-bar"></div>
+          <div class="bar lower-bar"></div>
+        </div>
+        <div class="menu-list">
+          <ul>
+            <li><a href="#" class="pause-menu" data-key="p" onclick="htmlButton(this)">Зупиночку, будь ласка</a></li>
+            <li><a href="#" class="new-game" onclick="init()">Клацнути руковичкою Таноса</a></li>
+            <li><div class="best-score">Best Score: 85</div></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="menu-background"></div>
+    </div>
+    
+    
     <div class="panel">
-        <div id="score"></div>
         <div id="message"></div>
+        <div class="pause-score">
+            <div id="score"></div>
+            <img src="./img/pause.svg" class="pause-main">
+        </div>
     <div class="tetris">  
     </div>    
 
-   
-
-    <div class="keys mobile">
+    <div class="keys">
         <img src="./img/arrow-left.svg" data-key="ArrowLeft"  onclick="htmlButton(this)">
         <img src="./img/arrow-rotate.svg" data-key="ArrowUp" onclick="htmlButton(this)">
         <img src="./img/arrow-down.svg" data-key="ArrowDown" onclick="htmlButton(this)">
