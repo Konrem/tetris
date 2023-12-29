@@ -230,7 +230,11 @@ img{
     list-style: none;
     margin-top: 20px;
   }
-  
+  .menu-list img{
+    width: 32px;
+    border: none;;
+  }
+ 
   .menu-list > ul > li a,
   .menu-list > ul > li div{
     color: #fff;
@@ -244,6 +248,11 @@ img{
   .menu-list > ul > li a:hover {
     background-color: rgba(0,0,0,0.2);
     animation: linkAnimation 0.2s ease-out;
+  }
+
+  .link a{
+    display: flex;
+    align-items: center;
   }
   
   .menu-background {

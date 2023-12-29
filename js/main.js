@@ -55,12 +55,14 @@ const colorFigure = [
 	"rgba(35, 37, 223 , 1)",
 ];
 
-let playfield, tetromino;
-let score = 0,
+let playfield,
+	tetromino,
+	cells,
+	achievement,
+	isPaused = false,
+	isGameOver = false,
+	score = 0,
 	bestScore = 101;
-let cells, achievement;
-let isPaused = false;
-let isGameOver = false;
 const gameOverBlock = document.querySelector(".game-over");
 const btnRestart = document.querySelector(".restart");
 const bestScoreDiv = document.querySelector(".best-score-menu");
