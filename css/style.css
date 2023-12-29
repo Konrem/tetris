@@ -168,21 +168,6 @@ img{
     bottom: 8%;
 }
 
-/* .F{
-    color: rgba(246, 223, 36, 1);
-    color: rgba(246, 172, 255, 1);
-    color: rgba(61, 238, 241, 0.75);
-    color: rgba(94, 229, 0, 1);
-    COLOR: rgba(229, 159, 61, 1);
-    COLOR: rgba(77, 175, 255, 1);
-    COLOR: rgba(255, 94, 174, 0.75);
-    COLOR: rgba(166, 134, 241, 1);
-    COLOR: rgba(248, 56, 89, 1);
-    COLOR: rgba(107, 72, 228, 1);
-    COLOR: rgba(35, 37, 223, 1);
-    color: #ff6a3a;
-
-} */
 .navigation-block {
     width: 200px;
     position: fixed;
@@ -295,15 +280,12 @@ img{
   
   @keyframes linkAnimation {
     0% {
-      /*transform: translateX(50px);*/
       transform: scale(1.1);
     }
     80% {
-      /*transform: translateX(-10px);*/
       transform: scale(0.9);
     }
     100% {
-      /*transform: translateX(0px);*/
       transform: scale(1);
     }
   }

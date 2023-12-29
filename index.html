@@ -7,81 +7,57 @@
     <title>Tetris</title>
 </head>
 <body>
-    <div class="d-flex field">
-    <!-- дз1 -->
-    <!-- додати інші фігури і стилізувати -->
-    <!-- додати функцію рандому, яка буде видавати випадково фігуру -->
-    <!-- центрування фігури, якак з'явиться -->
-    <!-- додати функцію рандомних кольорів для кожної фігури -->
-
-
-
-    <!-- дз2 -->
-    <!-- поставити const rowTetro = -2 прописати, щоб працювало коректно -->
-    <!-- зверстати поле розрахунку балів гри  -->
-    <!-- прописати логіку і код розразунку балів гри  -->
-    <!-- реалізувати самостійний рух фігур -->
-
-
-    <!-- дз3
-    розмітка результатів гри
-    зробити кнопки рестарту і паузи  -->
-    <!-- оптимізація коду -->
-    <!-- показати фігуру, що буде наступною -->
-    <!-- додати рівні гри з наростаючою і ні шкидкістю -->
-    <!-- зберігати і виводити найкращий результат -->
-    
-    <div class="navigation-block">
-        <div class="hamberger-menu">
-          <div class="bar upper-bar"></div>
-          <div class="bar middle-bar"></div>
-          <div class="bar lower-bar"></div>
+    <div class="d-flex field">  
+        <div class="navigation-block">
+            <div class="hamberger-menu">
+            <div class="bar upper-bar"></div>
+            <div class="bar middle-bar"></div>
+            <div class="bar lower-bar"></div>
+            </div>
+            <div class="menu-list">
+            <ul>
+                <li><a href="#" class="pause-menu" data-key="p" onclick="htmlButton(this)">Зупиночку, будь ласка</a></li>
+                <li><a href="#" class="new-game" onclick="init()">Клацнути руковичкою Таноса</a></li>
+                <li><div class="best-score-menu"></div></li>
+                <li><a href="#" data-key="801"  onclick="levelSpeedMove(this)">Складність 1</a></li>
+                <li><a href="#" data-key="550"  onclick="levelSpeedMove(this)">Складність 2</a></li>
+                <li><a href="#" data-key="301"  onclick="levelSpeedMove(this)">Складність 3</a></li>
+                <li class="link"><a href="https://github.com/Konrem/tetris">Github</a></li>
+            </ul>
+            </div>
+            <div class="menu-background"></div>
         </div>
-        <div class="menu-list">
-          <ul>
-            <li><a href="#" class="pause-menu" data-key="p" onclick="htmlButton(this)">Зупиночку, будь ласка</a></li>
-            <li><a href="#" class="new-game" onclick="init()">Клацнути руковичкою Таноса</a></li>
-            <li><div class="best-score-menu"></div></li>
-            <li><a href="#" data-key="801"  onclick="levelSpeedMove(this)">Складність 1</a></li>
-            <li><a href="#" data-key="550"  onclick="levelSpeedMove(this)">Складність 2</a></li>
-            <li><a href="#" data-key="301"  onclick="levelSpeedMove(this)">Складність 3</a></li>
-            <li class="link"><a href="https://github.com/Konrem/tetris">Github</a></li>
-          </ul>
-        </div>
-        <div class="menu-background"></div>
-    </div>
-    
-    <div class="panel">
-        <div class="title">TETRIS</div>
-        <div id="message"></div>
-        <div class="pause-score">
-            <div id="score"></div>
-            <img src="./img/pause.svg" class="pause-main">
-        </div>
-    <div class="tetris">  
-    </div>    
-
-    <div class="keys">
-        <img src="./img/arrow-left.svg" data-key="ArrowLeft"  onclick="htmlButton(this)">
-        <img src="./img/arrow-rotate.svg" data-key="ArrowUp" onclick="htmlButton(this)">
-        <img src="./img/arrow-down.svg" data-key="ArrowDown" onclick="htmlButton(this)">
-        <img src="./img/arrow-right.svg" data-key="ArrowRight" onclick="htmlButton(this)">
-    </div>
-</div>
-<div class="game-over d-flex">
-    <div class="result-game">
-        <div class="title">TETRIS</div>
-        <div class="subtitle-game-over">Давай по новой Миша, все</div>
-        <div class="sub-title">Game Over</div>
-        <div class="best-score-end"></div>
-        <div class="your-score-end"></div>
-        <div class="achievement"></div>
         
-        <button class="restart">Restart</button>
-    </div>
-</div>
-</div>
+        <div class="panel">
+            <div class="title">TETRIS</div>
+            <div id="message"></div>
+            <div class="pause-score">
+                <div id="score"></div>
+                <img src="./img/pause.svg" class="pause-main">
+            </div>
+            <div class="tetris">  
+            </div>    
 
+            <div class="keys">
+                <img src="./img/arrow-left.svg" data-key="ArrowLeft"  onclick="htmlButton(this)">
+                <img src="./img/arrow-rotate.svg" data-key="ArrowUp" onclick="htmlButton(this)">
+                <img src="./img/arrow-down.svg" data-key="ArrowDown" onclick="htmlButton(this)">
+                <img src="./img/arrow-right.svg" data-key="ArrowRight" onclick="htmlButton(this)">
+            </div>
+        </div>
+
+        <div class="game-over d-flex">
+            <div class="result-game">
+                <div class="title">TETRIS</div>
+                <div class="subtitle-game-over">Давай по новой Миша, все</div>
+                <div class="sub-title">Game Over</div>
+                <div class="best-score-end"></div>
+                <div class="your-score-end"></div>
+                <div class="achievement"></div>
+                <button class="restart">Restart</button>
+            </div>
+        </div>
+    </div>
     <script src="js/swiped-events.min.js"></script>
     <script src="js/main.js"></script>
 </body>

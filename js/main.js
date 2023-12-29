@@ -69,6 +69,11 @@ const btnRestart = document.querySelector(".restart");
 const bestScoreDiv = document.querySelector(".best-score-menu");
 const pauseKey1 = document.querySelector(".pause-menu");
 const pauseKey2 = document.querySelector(".pause-main");
+const scoreBlock = document.getElementById("score");
+const messageBlock = document.getElementById("message");
+const bestScoreEnd = document.querySelector(".best-score-end");
+const yourScoreEnd = document.querySelector(".your-score-end");
+const achievementEnd = document.querySelector(".achievement");
 
 init();
 
@@ -123,7 +128,6 @@ function generateTetromino() {
 		(PLAYFIELD_COLUMNS - TETROMINOES[name].length) / 2
 	);
 	const row = -2;
-
 	// const color = colorFigure[getRandom(colorFigure.length)];
 
 	tetromino = {
@@ -251,6 +255,8 @@ function dropTetrominoDown() {
 	tetromino.row--;
 }
 
+// Move figure
+
 function moveTetromino(direction) {
 	const originalRow = tetromino.row;
 	const originalColumn = tetromino.column;
@@ -279,8 +285,6 @@ function moveTetromino(direction) {
 
 function hasCollisions(row, column) {
 	return playfield[tetromino.row + row]?.[tetromino.column + column];
-	// if (tetromino.row + row >= 0)
-	// 	return playfield[tetromino.row + row][tetromino.column + column];
 }
 
 function isOutsideOfGameBoard(row, column) {
@@ -431,8 +435,8 @@ function scoreShow(rows) {
 			break;
 	}
 
-	document.getElementById("score").innerHTML = "Score : " + score;
-	document.getElementById("message").innerHTML = message;
+	scoreBlock.innerHTML = "Score : " + score;
+	messageBlock.innerHTML = message;
 }
 
 // AUTOMOVE
@@ -464,15 +468,12 @@ function gameOver() {
 	gameOverBlock.style.display = "flex";
 	if (bestScore < score) {
 		bestScore = score;
-		document.querySelector(".best-score-end").innerHTML =
-			"New Best Result: " + bestScore;
+		bestScoreEnd.innerHTML = "New Best Result: " + bestScore;
 	} else {
-		document.querySelector(".best-score-end").innerHTML =
-			"Best Result: " + bestScore;
+		bestScoreEnd.innerHTML = "Best Result: " + bestScore;
 	}
 
-	document.querySelector(".your-score-end").innerHTML =
-		"Your Score: " + score;
+	yourScoreEnd.innerHTML = "Your Score: " + score;
 	switch (true) {
 		case score <= 100:
 			achievement = "Арестович, ти?";
@@ -487,5 +488,5 @@ function gameOver() {
 			achievement = "Кирило Олексійович, це ви?";
 			break;
 	}
-	document.querySelector(".achievement").innerHTML = achievement;
+	achievementEnd.innerHTML = achievement;
 }
